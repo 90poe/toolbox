@@ -28,3 +28,5 @@ alias totestold="hash -r && export KUBECONFIG=~/.kube/test-old.test-eks.config"
 alias tointegration="hash -r && export KUBECONFIG=~/.kube/integration.prod-eks.config"
 alias toprod="hash -r && export KUBECONFIG=~/.kube/prod.prod-eks.config"
 
+# Configure primary bash prompt
+export PS1='toolbox:\w \$ '
