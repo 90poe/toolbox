@@ -47,4 +47,4 @@ ENV PATH="/root/bin:${PATH}"
 ENV BASH_ENV="/root/.bashrc"
 SHELL ["/bin/bash", "-l", "-c"]
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["/bin/bash"]
