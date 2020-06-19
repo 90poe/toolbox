@@ -34,6 +34,10 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
 	&& tar xvf helm.tar.gz \
 	&& mv linux-amd64/helm bin/ \
 	&& rm -rf linux-amd64 helm.tar.gz \
+    && git clone "https://github.com/tfutils/tfenv.git" ~/.tfenv \
+	&& ln -s ~/.tfenv/bin/* ~/bin \
+	&& bin/tfenv install \
+	&& bin/tfenv use \
     && curl -o bin/vessels-ovpn-generator-linux \
 	"https://s3-eu-west-1.amazonaws.com/90poe-tools-infrastructure/software/cli/vessels-ovpn-generator/vessels-ovpn-generator-linux" \
 	&& chmod +x bin/vessels-ovpn-generator-linux
