@@ -11,7 +11,7 @@ WORKDIR /root
 RUN mkdir bin/
 COPY --from=go-builder /go/bin/assume-role bin/assume-role
 
-# Install aws-cli
+# Install rest tools
 RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
 	-o "awscli-bundle.zip" \
         && unzip awscli-bundle.zip \
@@ -24,11 +24,6 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
     && curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl" \
         && chmod +x ./kubectl \
         && mv ./kubectl bin/ \
-    && curl "https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_linux_amd64.zip" \
-        -o "vault.zip" \
-        && unzip vault.zip \
-        && mv vault bin/ \
-        && rm -rf vault.zip \
     && curl "https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_linux_amd64.zip" \
         -o "vault.zip" \
         && unzip vault.zip \
