@@ -7,6 +7,7 @@ docker run \
   --volume ~/.aws:/root/.aws:ro \
   --volume ~/.kube:/root/.kube:ro \
   --volume ~/.ssh:/root/.ssh:ro \
+  --volume ~/.gitconfig:/root/.gitconfig:ro \
   --volume ~/Work:/root/Work:rw \
   --name toolbox \
   toolbox
