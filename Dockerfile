@@ -6,7 +6,7 @@ RUN go get -u github.com/remind101/assume-role
 
 
 FROM python:3-alpine
-RUN apk add --no-cache bash curl git openssh-client make git-crypt postgresql-client
+RUN apk add --no-cache bash curl git openssh-client make git-crypt postgresql-client jq
 WORKDIR /root
 RUN mkdir bin/
 COPY --from=go-builder /go/bin/assume-role bin/assume-role
