@@ -40,7 +40,10 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
 	&& bin/tfenv use \
     && curl -o bin/vessels-ovpn-generator-linux \
 	"https://s3-eu-west-1.amazonaws.com/90poe-tools-infrastructure/software/cli/vessels-ovpn-generator/vessels-ovpn-generator-linux" \
-	&& chmod +x bin/vessels-ovpn-generator-linux
+	&& chmod +x bin/vessels-ovpn-generator-linux \
+    && curl -o bin/fly \
+	"https://concourse.tools.devopenocean.studio/api/v1/cli?arch=amd64&platform=linux" \
+	&& chmod +x bin/fly
 
 COPY bashrc ./.bashrc
 ENV PATH="/root/bin:${PATH}"
