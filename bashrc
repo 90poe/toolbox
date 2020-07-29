@@ -24,7 +24,6 @@ export HELM_HOME="$HOME/Work/helm/production"
 # Kubeconfig aliases
 alias todev="hash -r && export KUBECONFIG=~/.kube/dev.devtest-eks.config"
 alias totest="hash -r && export KUBECONFIG=~/.kube/test.devtest-eks.config"
-alias totestold="hash -r && export KUBECONFIG=~/.kube/test-old.test-eks.config"
 alias tointegration="hash -r && export KUBECONFIG=~/.kube/integration.prod-eks.config"
 alias toprod="hash -r && export KUBECONFIG=~/.kube/prod.prod-eks.config"
 

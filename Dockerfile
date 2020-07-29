@@ -4,7 +4,6 @@ RUN apk add --no-cache git
 # Install assume-role
 RUN go get -u github.com/remind101/assume-role
 
-
 FROM python:3-alpine
 RUN apk add --no-cache bash curl git openssh-client make git-crypt postgresql-client jq go kafkacat
 WORKDIR /root
