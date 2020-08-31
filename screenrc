@@ -1,0 +1,2 @@
+startup_message off
+hardstatus alwayslastline "%{= bY}toolbox    %{+ C}%w"
