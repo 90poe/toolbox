@@ -29,3 +29,6 @@ alias toprod="hash -r && export KUBECONFIG=~/.kube/prod.prod-eks.config"
 
 # Configure primary bash prompt
 export PS1='toolbox:\w \$ '
+
+alias k="kubectl"
+alias as="assume-role"

@@ -5,7 +5,7 @@ RUN apk add --no-cache git
 RUN go get -u github.com/remind101/assume-role
 
 FROM python:3-alpine
-RUN apk add --no-cache bash curl git openssh-client make git-crypt postgresql-client jq go kafkacat
+RUN apk add --no-cache bash curl git openssh-client make git-crypt postgresql-client jq go kafkacat screen
 WORKDIR /root
 RUN mkdir bin/
 COPY --from=go-builder /go/bin/assume-role bin/assume-role
@@ -16,7 +16,6 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
         && unzip awscli-bundle.zip \
         && ./awscli-bundle/install -i /usr/local/aws -b bin/aws \
 	&& rm -rf awscli-bundle* \
-	\
     && curl -o bin/aws-iam-authenticator \
 	"https://amazon-eks.s3.us-west-2.amazonaws.com/1.16.8/2020-04-16/bin/linux/amd64/aws-iam-authenticator" \
         && chmod +x bin/aws-iam-authenticator \
@@ -45,6 +44,7 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
 	&& chmod +x bin/fly
 
 COPY bashrc ./.bashrc
+COPY screenrc ./.screenrc
 ENV PATH="/root/bin:${PATH}"
 ENV BASH_ENV="/root/.bashrc"
 SHELL ["/bin/bash", "-l", "-c"]
