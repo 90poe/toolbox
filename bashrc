@@ -32,3 +32,6 @@ export PS1='toolbox:\w \$ '
 
 alias k="kubectl"
 alias as="assume-role"
+
+# Start screen
+#screen
