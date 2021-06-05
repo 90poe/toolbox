@@ -28,7 +28,7 @@ alias tointegration="hash -r && export KUBECONFIG=~/.kube/integration.prod-eks.c
 alias toprod="hash -r && export KUBECONFIG=~/.kube/prod.prod-eks.config"
 
 # Configure primary bash prompt
-export PS1='toolbox:\w \$ '
+export PS1="toolbox:\w $ASSUMED_ROLE \$ "
 
 alias k="kubectl"
 alias as="assume-role"

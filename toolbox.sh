@@ -8,7 +8,7 @@ docker run \
   --device /dev/net/tun \
   --volume ~/.aws:/root/.aws:ro \
   --volume ~/.kube:/root/.kube:ro \
-  --volume ~/.ssh:/root/.ssh:ro \
+  --volume ~/.ssh:/root/.ssh:rw \
   --volume ~/.gitconfig:/root/.gitconfig:ro \
   --volume ~/.git-crypt:/root/.git-crypt \
   --volume ~/Work:/root/Work:rw \
