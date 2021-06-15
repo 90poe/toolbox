@@ -30,7 +30,12 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
     && curl "https://get.helm.sh/helm-v2.16.7-linux-amd64.tar.gz" \
 	-o "helm.tar.gz" \
 	&& tar xvf helm.tar.gz \
-	&& mv linux-amd64/helm bin/ \
+	&& mv linux-amd64/helm bin/helm2 \
+	&& rm -rf linux-amd64 helm.tar.gz \
+    && curl "https://get.helm.sh/helm-v3.6.0-linux-amd64.tar.gz" \
+	-o "helm.tar.gz" \
+	&& tar xvf helm.tar.gz \
+	&& mv linux-amd64/helm bin/helm3 \
 	&& rm -rf linux-amd64 helm.tar.gz \
     && git clone "https://github.com/tfutils/tfenv.git" ~/.tfenv \
 	&& ln -s ~/.tfenv/bin/* ~/bin \
