@@ -46,6 +46,7 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" \
 	&& unzip ovpn-generator-linux-out.zip \
 	&& mv ovpn-generator-linux bin/ovpn-generator \
 	&& chmod +x bin/ovpn-generator \
+	&& rm -rf ovpn-generator-linux-out.zip \
     && curl -o bin/fly \
 	"https://concourse.tools.devopenocean.studio/api/v1/cli?arch=amd64&platform=linux" \
 	&& chmod +x bin/fly \
